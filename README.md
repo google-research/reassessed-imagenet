@@ -1,7 +1,7 @@
 # Reassessed labels for the ILSVRC-2012 ("ImageNet") validation set
 
 This repository contains data and example code for computing the "ReaL accuracy"
-on ImageNet used in our paper [Are we done with ImageNet?](TODO).
+on ImageNet used in our paper [Are we done with ImageNet?](https://arxiv.org/abs/2006.07159).
 
 ## Example code for computing ReaL accuracy
 
@@ -84,3 +84,8 @@ answered question `N` with `no/maybe/yes`, respectively.
 Again, `info` is a list of `N` `(fname, label)` pairs.
 Additionally, `ids` is a list of rater length `R` containing rater IDs, which
 can be used to match raters across `raters.npz` and `raters_golden.npz`.
+
+## List of ImageNet training files
+
+We also release the [list of training file-names](https://github.com/google-research/reassessed-imagenet/releases/download/v1.0/fnames_clean.txt)
+used in Section 6 of the paper.
