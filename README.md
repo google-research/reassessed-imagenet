@@ -31,9 +31,21 @@ real_accuracy = np.mean(is_correct)
 
 We hope to make our labels easier to use by integrating them with [torchvision.datasets](https://pytorch.org/docs/stable/torchvision/datasets.html#imagenet) after the release.
 
-### TensorFlow
+### TensorFlow Datasets
 
-We hope to make our labels easier to use by integrating them with [TensorFlow Datasets](https://www.tensorflow.org/datasets/catalog/imagenet2012) after the release.
+Our labels are available in the [TensorFlow Datasets](https://www.tensorflow.org/datasets/catalog/imagenet2012_real) library.
+
+Usage example:
+
+```
+import tensorflow_datasets as tfds
+
+data = tfds.builder('imagenet2012_real')
+data = data.as_dataset(split='validation')
+data_iter = data.as_numpy_iterator()
+example = data_iter.next()
+example['image'], example['original_label'], example['real_label']
+```
 
 ## Description of the files
 
