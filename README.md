@@ -10,7 +10,7 @@ Disclaimer: This is not an officially supported Google product.
 
 ### NumPy
 
-```
+```python
 import json
 import numpy as np
 
@@ -31,13 +31,19 @@ real_accuracy = np.mean(is_correct)
 
 We hope to make our labels easier to use by integrating them with [torchvision.datasets](https://pytorch.org/docs/stable/torchvision/datasets.html#imagenet) after the release.
 
+Ross Wightman ([@rwightman](https://github.com/rwightman)) has now included [evaluation on the ReaL labels](https://github.com/rwightman/pytorch-image-models/blob/master/results/results-imagenet-real.csv)
+in his well known [pytorch-image-models](https://github.com/rwightman/pytorch-image-models) repository.
+Have a look at [real_labels.py](https://github.com/rwightman/pytorch-image-models/blob/master/timm/data/real_labels.py)
+and the way it is used in [validate.py](https://github.com/rwightman/pytorch-image-models/blob/078a51dbac2ec4e401e166a3aec0b3c613e6c06f/validate.py#L196-L197)
+for a good usage example in PyTorch.
+
 ### TensorFlow Datasets
 
 Our labels are available in the [TensorFlow Datasets](https://www.tensorflow.org/datasets/catalog/imagenet2012_real) library.
 
 Usage example:
 
-```
+```python
 import tensorflow_datasets as tfds
 
 data = tfds.builder('imagenet2012_real')
@@ -71,7 +77,7 @@ could be used if you want to try different operating points than the one we used
 
 This is a compressed numpy archive, that can be loaded as follows:
 
-```
+```python
 data = np.load('scores.npz')
 scores, info = data['scores'], data['info']
 ```
@@ -86,7 +92,7 @@ raters (paper authors) and the _all_ rater's answers to those golden questions.
 
 All files follow this format:
 
-```
+```python
 data = np.load('scores.npz')
 scores, info, ids = data['scores'], data['info'], data['ids']
 ```
