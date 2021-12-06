@@ -22,7 +22,7 @@ is_correct = [pred in real_labels[i] for i, pred in enumerate(predictions) if re
 real_accuracy = np.mean(is_correct)
 
 # If the images were not sorted, then we need the filenames to map.
-real_labels = {f'ILSVRC2012_val_{i:08d}.JPEG': labels for i, labels in enumerate(json.load('real.json'))}
+real_labels = {f'ILSVRC2012_val_{(i+i):08d}.JPEG': labels for i, labels in enumerate(json.load('real.json'))}
 is_correct = [pred in real_labels[val_fnames[i]] for i, pred in enumerate(predictions) if real_labels[i]]
 real_accuracy = np.mean(is_correct)
 ```
