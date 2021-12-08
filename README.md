@@ -79,7 +79,7 @@ This is a compressed numpy archive, that can be loaded as follows:
 
 ```python
 data = np.load('scores.npz')
-scores, info = data['scores'], data['info']
+scores, info = data['tensor'], data['info']
 ```
 
 Then, `scores` is an array of N floats in [0,1], and `info` is an array of N
@@ -94,7 +94,7 @@ All files follow this format:
 
 ```python
 data = np.load('scores.npz')
-scores, info, ids = data['scores'], data['info'], data['ids']
+scores, info, ids = data['tensor'], data['info'], data['ids']
 ```
 
 Here, `scores` is a `RxNx3` binary tensor, where a 1 is placed when rater `R`
